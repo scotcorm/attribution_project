@@ -1,0 +1,15 @@
+<h1>Attribution List</h1>
+
+{% for project in projects %}
+
+<h3>Title: "{{ project.title }}"</h3>
+<p>Creator: {{ project.creator }}</p>
+<p>Source: {{ project.source }}</p>
+<p>License: {{ project.license }}</p>
+<p>{{ project.image.url }}</p>
+<img src="{{ project.image.url }}" width=400>
+{% if project.url %}
+<br><a href="{{ project.url }}">Link</a>
+{% endif %}
+<hr style="border: 3px solid black; margin: 30px; width:25%;text-align:left;margin-left:0">
+{% endfor %}
